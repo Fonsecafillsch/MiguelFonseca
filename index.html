@@ -205,68 +205,120 @@
     };
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Typed('.typed', {
-        strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 2000,
-        loop: true
-      });
-
-      const translations = {
-        pt: {
-          "nav.inicio": "Início",
-          "nav.sobre": "Sobre",
-          "nav.skills": "Skills",
-          "nav.projetos": "Projetos",
-          "nav.contacto": "Contacto",
-          "explorar": "Explora o meu percurso",
-          "sobre.titulo": "Sobre mim",
-          "sobre.texto": "Sou apaixonado por tecnologia, crio scripts, exploro ideias novas e estou a construir o meu caminho no mundo digital. Quero viver daquilo que gosto, com criatividade e autenticidade.",
-          "skills.titulo": "Skills",
-          "skills.texto": "Ainda vamos personalizar esta secção...",
-          "projetos.titulo": "Projetos",
-          "projetos.texto": "Ainda vamos adicionar os teus projetos aqui.",
-          "contacto.titulo": "Contacto",
-          "contacto.texto": "Queres trabalhar comigo ou trocar ideias? Envia mensagem!"
-        },
-        en: {
-          "nav.inicio": "Home",
-          "nav.sobre": "About",
-          "nav.skills": "Skills",
-          "nav.projetos": "Projects",
-          "nav.contacto": "Contact",
-          "explorar": "Explore my journey",
-          "sobre.titulo": "About Me",
-          "sobre.texto": "I'm passionate about technology, I create scripts, explore new ideas, and I'm building my path in the digital world. I want to live doing what I love, with creativity and authenticity.",
-          "skills.titulo": "Skills",
-          "skills.texto": "We’ll personalize this section soon...",
-          "projetos.titulo": "Projects",
-          "projetos.texto": "I’ll be adding my tech projects here.",
-          "contacto.titulo": "Contact",
-          "contacto.texto": "Want to work with me or share ideas? Send a message!"
-        }
-      };
-
-      const switchLang = (lang) => {
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const key = el.getAttribute("data-i18n");
-          if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
-          }
-        });
-        localStorage.setItem("lang", lang);
-      };
-
-      document.querySelectorAll(".lang-switch").forEach(btn => {
-        btn.addEventListener("click", () => switchLang(btn.dataset.lang));
-      });
-
-      const savedLang = localStorage.getItem("lang") || "pt";
-      switchLang(savedLang);
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed('.typed', {
+      strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
     });
-  </script>
+
+    const translations = {
+      en: {
+        "nav.inicio": "Home",
+        "nav.sobre": "About",
+        "nav.skills": "Skills",
+        "nav.projetos": "Projects",
+        "nav.contacto": "Contact",
+        "explorar": "Explore my journey",
+        "sobre.titulo": "About Me",
+        "sobre.texto": "I'm passionate about technology, I create scripts, explore new ideas, and I'm building my path in the digital world. I want to live doing what I love, with creativity and authenticity.",
+        "skills.titulo": "Skills",
+        "skills.texto": "We’ll personalize this section soon...",
+        "projetos.titulo": "Projects",
+        "projetos.texto": "I’ll be adding my tech projects here.",
+        "contacto.titulo": "Contact",
+        "contacto.texto": "Want to work with me or share ideas? Send a message!"
+      },
+      pt: {
+        "nav.inicio": "Início",
+        "nav.sobre": "Sobre",
+        "nav.skills": "Skills",
+        "nav.projetos": "Projetos",
+        "nav.contacto": "Contacto",
+        "explorar": "Explora o meu percurso",
+        "sobre.titulo": "Sobre mim",
+        "sobre.texto": "Sou apaixonado por tecnologia, crio scripts, exploro ideias novas e estou a construir o meu caminho no mundo digital. Quero viver daquilo que gosto, com criatividade e autenticidade.",
+        "skills.titulo": "Skills",
+        "skills.texto": "Ainda vamos personalizar esta secção...",
+        "projetos.titulo": "Projetos",
+        "projetos.texto": "Ainda vamos adicionar os teus projetos aqui.",
+        "contacto.titulo": "Contacto",
+        "contacto.texto": "Queres trabalhar comigo ou trocar ideias? Envia mensagem!"
+      },
+      fr: {
+        "nav.inicio": "Accueil",
+        "nav.sobre": "À propos",
+        "nav.skills": "Compétences",
+        "nav.projetos": "Projets",
+        "nav.contacto": "Contact",
+        "explorar": "Découvre mon parcours",
+        "sobre.titulo": "À propos de moi",
+        "sobre.texto": "Passionné par la technologie, je crée des scripts, explore de nouvelles idées et construis mon chemin dans le monde numérique.",
+        "skills.titulo": "Compétences",
+        "skills.texto": "Cette section sera bientôt personnalisée...",
+        "projetos.titulo": "Projets",
+        "projetos.texto": "Je vais ajouter ici mes projets tech.",
+        "contacto.titulo": "Contact",
+        "contacto.texto": "Envie de travailler avec moi ou d'échanger des idées ? Envoie un message !"
+      },
+      es: {
+        "nav.inicio": "Inicio",
+        "nav.sobre": "Sobre mí",
+        "nav.skills": "Habilidades",
+        "nav.projetos": "Proyectos",
+        "nav.contacto": "Contacto",
+        "explorar": "Explora mi recorrido",
+        "sobre.titulo": "Sobre mí",
+        "sobre.texto": "Apasionado por la tecnología, creo scripts, exploro ideas nuevas y estoy construyendo mi camino en el mundo digital.",
+        "skills.titulo": "Habilidades",
+        "skills.texto": "Pronto personalizaremos esta sección...",
+        "projetos.titulo": "Proyectos",
+        "projetos.texto": "Pronto añadiré mis proyectos aquí.",
+        "contacto.titulo": "Contacto",
+        "contacto.texto": "¿Quieres trabajar conmigo o intercambiar ideas? ¡Mándame un mensaje!"
+      },
+      de: {
+        "nav.inicio": "Startseite",
+        "nav.sobre": "Über mich",
+        "nav.skills": "Fähigkeiten",
+        "nav.projetos": "Projekte",
+        "nav.contacto": "Kontakt",
+        "explorar": "Entdecke meinen Werdegang",
+        "sobre.titulo": "Über mich",
+        "sobre.texto": "Ich bin technologiebegeistert, entwickle Skripte, erkunde neue Ideen und baue meinen Weg in der digitalen Welt.",
+        "skills.titulo": "Fähigkeiten",
+        "skills.texto": "Dieser Abschnitt wird bald angepasst...",
+        "projetos.titulo": "Projekte",
+        "projetos.texto": "Hier werde ich bald meine Projekte vorstellen.",
+        "contacto.titulo": "Kontakt",
+        "contacto.texto": "Möchtest du mit mir arbeiten oder Ideen austauschen? Sende mir eine Nachricht!"
+      }
+    };
+
+    const switchLang = (lang) => {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      localStorage.setItem("lang", lang);
+    };
+
+    document.querySelectorAll(".lang-switch").forEach(btn => {
+      btn.addEventListener("click", () => switchLang(btn.dataset.lang));
+    });
+
+    // Detectar idioma do navegador, ou usar localStorage
+    const savedLang = localStorage.getItem("lang");
+    const browserLang = navigator.language.slice(0, 2).toLowerCase();
+    const defaultLang = savedLang || (['en', 'pt', 'fr', 'es', 'de'].includes(browserLang) ? browserLang : 'en');
+
+    switchLang(defaultLang);
+  });
+</script>
 </body>
 </html>
