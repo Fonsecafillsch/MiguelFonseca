@@ -72,6 +72,15 @@
     <i id="dark-icon" class="bi bi-brightness-high"></i>
   </div>
 
+  <div style="position: fixed; top: 1rem; left: 1rem; z-index: 10001;">
+  <select id="lang-switcher" class="form-select form-select-sm" onchange="switchLang(this.value)">
+    <option value="pt">PT</option>
+    <option value="en">EN</option>
+    <!-- Futuramente: <option value="fr">FR</option> -->
+  </select>
+</div>
+
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -280,5 +289,47 @@
       });
     });
   </script>
+
+  <script>
+  const translations = {
+    pt: {
+      heroBtn: "Explora o meu percurso",
+      sobreTitulo: "Sobre mim",
+      sobreTexto: "Sou apaixonado por tecnologia, crio scripts, exploro ideias novas e estou a construir o meu caminho no mundo digital.",
+      skillsTitulo: "Skills",
+      projetosTitulo: "Projetos",
+      contactoTitulo: "Contacto",
+      contactoTexto: "Queres trabalhar comigo ou trocar ideias? Envia mensagem!"
+    },
+    en: {
+      heroBtn: "Explore my journey",
+      sobreTitulo: "About me",
+      sobreTexto: "I'm passionate about technology, I create scripts, explore new ideas and I'm building my path in the digital world.",
+      skillsTitulo: "Skills",
+      projetosTitulo: "Projects",
+      contactoTitulo: "Contact",
+      contactoTexto: "Want to work with me or exchange ideas? Send a message!"
+    }
+  };
+
+  function switchLang(lang) {
+    const t = translations[lang];
+    document.querySelector('#hero a').textContent = t.heroBtn;
+    document.querySelector('#sobre h2').textContent = t.sobreTitulo;
+    document.querySelector('#sobre p').textContent = t.sobreTexto;
+    document.querySelector('#skills h2').textContent = t.skillsTitulo;
+    document.querySelector('#projetos h2').textContent = t.projetosTitulo;
+    document.querySelector('#contacto h2').textContent = t.contactoTitulo;
+    document.querySelector('#contacto p').textContent = t.contactoTexto;
+    localStorage.setItem('lang', lang);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'pt';
+    document.getElementById('lang-switcher').value = savedLang;
+    switchLang(savedLang);
+  });
+</script>
+
 </body>
 </html>
