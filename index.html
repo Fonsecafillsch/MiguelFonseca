@@ -7,79 +7,61 @@
   <meta name="description" content="Currículo online de Miguel Fonseca – desenvolvedor web, entusiasta de QA.">
   <meta name="keywords" content="Miguel, Currículo, QA, Desenvolvedor, Tech">
 
-  <!-- Bootstrap, Icons, Google Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #f1f1f1;
-  }
-
-  body.light-mode {
-    background-color: #ffffff;
-    color: #212529;
-  }
-
-  body.light-mode h1,
-  body.light-mode h2,
-  body.light-mode h3,
-  body.light-mode h4,
-  body.light-mode p,
-  body.light-mode a,
-  body.light-mode li {
-    color: #212529;
-  }
-
-  .dark-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    font-size: 1.4rem;
-    z-index: 10000;
-  }
-
-  footer {
-    padding: 2rem 0;
-    background-color: #1e1e1e;
-    color: #ccc;
-    text-align: center;
-  }
-
-  footer a {
-    color: #ccc;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-  }
-
-  footer a:hover {
-    color: #fff;
-  }
-</style>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    body.light-mode {
+      background-color: #ffffff;
+      color: #212529;
+    }
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode h3,
+    body.light-mode h4,
+    body.light-mode p,
+    body.light-mode a,
+    body.light-mode li {
+      color: #212529;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 1.4rem;
+      z-index: 10000;
+    }
+    footer {
+      padding: 2rem 0;
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
-<body class="dark-mode">
 
-  <!-- Botão Dark Mode -->
+<body class="dark-mode">
+  <!-- Dark Mode Toggle -->
   <div class="dark-toggle" onclick="toggleDarkMode()">
     <i id="dark-icon" class="bi bi-brightness-high"></i>
   </div>
-
-  <div style="position: fixed; top: 1rem; left: 1rem; z-index: 10001;">
-  <select id="lang-switcher" class="form-select form-select-sm" onchange="switchLang(this.value)">
-    <option value="pt">PT</option>
-    <option value="en">EN</option>
-    <!-- Futuramente: <option value="fr">FR</option> -->
-  </select>
-</div>
-
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -97,31 +79,28 @@
           <li class="nav-item"><a class="nav-link" href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">🌐</a>
-<ul class="dropdown-menu">
-  <li><a class="dropdown-item lang-switch" data-lang="pt">🇵🇹 Português</a></li>
-  <li><a class="dropdown-item lang-switch" data-lang="en">🇬🇧 English</a></li>
-  <li><a class="dropdown-item lang-switch" data-lang="fr">🇫🇷 Français</a></li>
-  <li><a class="dropdown-item lang-switch" data-lang="es">🇪🇸 Español</a></li>
-  <li><a class="dropdown-item lang-switch" data-lang="de">🇩🇪 Deutsch</a></li>
-</ul>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item lang-switch" data-lang="pt">🇵🇹 Português</a></li>
+              <li><a class="dropdown-item lang-switch" data-lang="en">🇬🇧 English</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero com texto digitado -->
+  <!-- Hero -->
   <section id="hero" class="d-flex align-items-center justify-content-center text-center" style="height: 100vh;">
     <div class="container">
       <h1 class="mb-3">Miguel Fonseca</h1>
       <h2 class="mb-4">
-        <span class="typed" data-typed-items="Digital Dev, Hardware / Software , Dev & QA, Projetos Tech"></span>
+        <span class="typed" data-typed-items="Digital Dev, Hardware / Software, Dev & QA, Projetos Tech"></span>
       </h2>
       <a href="#sobre" class="btn btn-primary" data-i18n="explorar">Explora o meu percurso</a>
     </div>
   </section>
 
-  <!-- Sobre mim -->
+  <!-- Sobre -->
   <section id="sobre" class="py-5">
     <div class="container">
       <div class="row align-items-center">
@@ -140,40 +119,36 @@
     </div>
   </section>
 
-<!-- Skills -->
-<section id="skills" class="py-5">
-  <div class="container">
-    <h2 class="mb-4" data-i18n="skills.titulo">Skills</h2>
-
-    <!-- Competências Técnicas -->
-    <div class="row gy-4">
-      <div class="col-md-6">
-        <h4><i class="bi bi-laptop me-2"></i> Competências Técnicas</h4>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-file-code me-2"></i>HTML / CSS – Intermédio</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-braces me-2"></i>JavaScript – Básico</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-git me-2"></i>Git / GitHub – Iniciante a médio</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-check2-circle me-2"></i>QA / Testes – Iniciante</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-terminal me-2"></i>VS Code – Confortável</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-github me-2"></i>GitHub Desktop – Confortável</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-bootstrap me-2"></i>Bootstrap – Iniciante</li>
-          <li class="list-group-item bg-transparent text-light"><i class="bi bi-discord me-2"></i>Discord Bots – Iniciante/Médio</li>
-        </ul>
-      </div>
-
-      <!-- Idiomas -->
-      <div class="col-md-6">
-        <h4><i class="bi bi-translate me-2"></i> Idiomas Falados</h4>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-transparent text-light">🇵🇹 Português – Língua Materna</li>
-          <li class="list-group-item bg-transparent text-light">🇬🇧 Inglês – Fluente</li>
-          <li class="list-group-item bg-transparent text-light">🇪🇸 Espanhol – Fluente</li>
-          <li class="list-group-item bg-transparent text-light">🇫🇷 Francês – Intermédio</li>
-        </ul>
+  <!-- Skills -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="mb-4" data-i18n="skills.titulo">Skills</h2>
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h4><i class="bi bi-laptop me-2"></i> Competências Técnicas</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-file-code me-2"></i>HTML / CSS – Intermédio</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-braces me-2"></i>JavaScript – Básico</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-git me-2"></i>Git / GitHub – Iniciante a médio</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-check2-circle me-2"></i>QA / Testes – Iniciante</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-terminal me-2"></i>VS Code – Confortável</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-github me-2"></i>GitHub Desktop – Confortável</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-bootstrap me-2"></i>Bootstrap – Iniciante</li>
+            <li class="list-group-item bg-transparent text-light"><i class="bi bi-discord me-2"></i>Discord Bots – Iniciante/Médio</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="bi bi-translate me-2"></i> Idiomas Falados</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent text-light">🇵🇹 Português – Língua Materna</li>
+            <li class="list-group-item bg-transparent text-light">🇬🇧 Inglês – Fluente</li>
+            <li class="list-group-item bg-transparent text-light">🇪🇸 Espanhol – Fluente</li>
+            <li class="list-group-item bg-transparent text-light">🇫🇷 Francês – Intermédio</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Projetos -->
   <section id="projetos" class="py-5">
@@ -191,7 +166,7 @@
     </div>
   </section>
 
-  <!-- Rodapé com LinkedIn -->
+  <!-- Rodapé -->
   <footer class="bg-dark text-light py-4">
     <div class="container text-center">
       <p>&copy; 2025 Miguel Fonseca. Todos os direitos reservados.</p>
@@ -203,32 +178,32 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  function toggleDarkMode() {
-    const body = document.body;
-    const icon = document.getElementById('dark-icon');
-    const isDark = body.classList.contains('dark-mode');
-    if (isDark) {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      icon.className = 'bi bi-moon-stars-fill';
-      localStorage.setItem('theme', 'light');
-    } else {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      icon.className = 'bi bi-brightness-high';
-      localStorage.setItem('theme', 'dark');
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const icon = document.getElementById('dark-icon');
+      const isDark = body.classList.contains('dark-mode');
+      if (isDark) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        icon.className = 'bi bi-moon-stars-fill';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        icon.className = 'bi bi-brightness-high';
+        localStorage.setItem('theme', 'dark');
+      }
     }
-  }
 
-  window.onload = () => {
-    const theme = localStorage.getItem('theme') || 'dark';
-    document.body.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
-    document.getElementById('dark-icon').className = theme === 'dark'
-      ? 'bi bi-brightness-high'
-      : 'bi bi-moon-stars-fill';
-  };
-</script>
+    window.onload = () => {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.body.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+      document.getElementById('dark-icon').className = theme === 'dark'
+        ? 'bi bi-brightness-high'
+        : 'bi bi-moon-stars-fill';
+    };
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -282,54 +257,16 @@
             el.textContent = translations[lang][key];
           }
         });
+        localStorage.setItem("lang", lang);
       };
 
       document.querySelectorAll(".lang-switch").forEach(btn => {
         btn.addEventListener("click", () => switchLang(btn.dataset.lang));
       });
+
+      const savedLang = localStorage.getItem("lang") || "pt";
+      switchLang(savedLang);
     });
   </script>
-
-  <script>
-  const translations = {
-    pt: {
-      heroBtn: "Explora o meu percurso",
-      sobreTitulo: "Sobre mim",
-      sobreTexto: "Sou apaixonado por tecnologia, crio scripts, exploro ideias novas e estou a construir o meu caminho no mundo digital.",
-      skillsTitulo: "Skills",
-      projetosTitulo: "Projetos",
-      contactoTitulo: "Contacto",
-      contactoTexto: "Queres trabalhar comigo ou trocar ideias? Envia mensagem!"
-    },
-    en: {
-      heroBtn: "Explore my journey",
-      sobreTitulo: "About me",
-      sobreTexto: "I'm passionate about technology, I create scripts, explore new ideas and I'm building my path in the digital world.",
-      skillsTitulo: "Skills",
-      projetosTitulo: "Projects",
-      contactoTitulo: "Contact",
-      contactoTexto: "Want to work with me or exchange ideas? Send a message!"
-    }
-  };
-
-  function switchLang(lang) {
-    const t = translations[lang];
-    document.querySelector('#hero a').textContent = t.heroBtn;
-    document.querySelector('#sobre h2').textContent = t.sobreTitulo;
-    document.querySelector('#sobre p').textContent = t.sobreTexto;
-    document.querySelector('#skills h2').textContent = t.skillsTitulo;
-    document.querySelector('#projetos h2').textContent = t.projetosTitulo;
-    document.querySelector('#contacto h2').textContent = t.contactoTitulo;
-    document.querySelector('#contacto p').textContent = t.contactoTexto;
-    localStorage.setItem('lang', lang);
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('lang') || 'pt';
-    document.getElementById('lang-switcher').value = savedLang;
-    switchLang(savedLang);
-  });
-</script>
-
 </body>
 </html>
