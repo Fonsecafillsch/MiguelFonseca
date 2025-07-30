@@ -15,15 +15,55 @@
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <style>
-    body { font-family: 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
-    .dark-mode { background: #121212; color: #f1f1f1; }
-    .dark-toggle { position: fixed; top: 1rem; right: 1rem; cursor: pointer; font-size: 1.4rem; z-index: 10000; }
-    .navbar-dark .nav-link, .navbar-dark .navbar-brand { color: #f1f1f1; }
-    .dropdown-menu { background-color: #212529; }
-    .dropdown-item { color: #fff; }
-    .dropdown-item:hover { background-color: #343a40; }
-  </style>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+
+  body.light-mode {
+    background-color: #ffffff;
+    color: #212529;
+  }
+
+  body.light-mode h1,
+  body.light-mode h2,
+  body.light-mode h3,
+  body.light-mode h4,
+  body.light-mode p,
+  body.light-mode a,
+  body.light-mode li {
+    color: #212529;
+  }
+
+  .dark-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    z-index: 10000;
+  }
+
+  footer {
+    padding: 2rem 0;
+    background-color: #1e1e1e;
+    color: #ccc;
+    text-align: center;
+  }
+
+  footer a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  footer a:hover {
+    color: #fff;
+  }
+</style>
 </head>
 <body class="dark-mode">
 
